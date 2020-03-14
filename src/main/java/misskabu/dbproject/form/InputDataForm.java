@@ -3,11 +3,13 @@
  */
 package misskabu.dbproject.form;
 
+import java.io.Serializable;
+
 /**
  * @author tabuchikenta
  * jspのフォーム入力値とアクションのデータをバインドするためのjavabeanクラス。
  */
-public class InputDataForm {
+public class InputDataForm implements Serializable{
 
 	private int code;
 	private String title;

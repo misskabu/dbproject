@@ -5,11 +5,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>入力確認画面</title>
+<title>登録完了</title>
 </head>
 <body>
-	<h1>入力確認画面</h1>
-	<s:form action="comfirmAction_complete">
+	<h1>登録完了画面</h1>
 		<table>
 			<tr>
 				<th>コード番号</th>
@@ -24,7 +23,6 @@
 				<td><s:property value="inputDataForm.contents"/></td>
 			</tr>
 		</table>
-		<s:submit value="登録する"/>
-	</s:form>
+		
 </body>
 </html>

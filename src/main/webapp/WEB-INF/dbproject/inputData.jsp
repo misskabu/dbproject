@@ -9,7 +9,7 @@
 </head>
 <body>
 	<h1>入力画面</h1>
-	<s:form action="data_comfirmData">
+	<s:form action="inputAction_comfirmData">
 		<table>
 			<tr>
 				<th>コード番号</th>

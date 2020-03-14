@@ -10,7 +10,7 @@ import misskabu.dbproject.form.InputDataForm;
  * @author tabuchikenta
  *　データの入力画面の制御を行うアクション
  */
-public class DataAction extends BaseAction {
+public class InputAction extends BaseAction {
 
 	/**
 	 * フォームの入力値を保持するビーン
@@ -24,6 +24,7 @@ public class DataAction extends BaseAction {
 	public String comfirmData() {
 		log.info("comfirmData()_start");
 		log.info(inputDataForm);
+		this.userSession.put("inputDataForm", inputDataForm);
 		log.info("comfirmData()_end");
 		return SUCCESS;
 	}
