@@ -9,7 +9,7 @@
 </head>
 <body>
 	<h1>CRUDの練習</h1>
-	<s:form action="data_inputData">
+	<s:form action="index_inputData">
 		<s:submit value="新規登録"/>
 	</s:form>
 </body>

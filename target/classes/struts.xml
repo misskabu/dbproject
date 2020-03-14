@@ -17,10 +17,16 @@
 				/WEB-INF/index.jsp
 			</result>
 		</action>
-		<action name="data_*" method="inputData"
-			class="misskabu.dbproject.action.DataAction">
+		<action name="index_*" method="inputData"
+			class="misskabu.dbproject.action.IndexAction">
 			<result name="success">
 				/WEB-INF/dbproject/inputData.jsp
+			</result>
+		</action>
+		<action name="data_*" method="comfirmData"
+			class="misskabu.dbproject.action.DataAction">
+			<result name="success">
+				/WEB-INF/dbproject/comfirmData.jsp
 			</result>
 		</action>
 

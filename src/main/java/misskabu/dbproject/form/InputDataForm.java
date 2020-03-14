@@ -8,6 +8,11 @@ package misskabu.dbproject.form;
  * jspのフォーム入力値とアクションのデータをバインドするためのjavabeanクラス。
  */
 public class InputDataForm {
+
+	private int code;
+	private String title;
+	private String contents;
+
 	public int getCode() {
 		return code;
 	}
@@ -26,7 +31,13 @@ public class InputDataForm {
 	public void setContents(String contents) {
 		this.contents = contents;
 	}
-	private int code;
-	private String title;
-	private String contents;
+
+	@Override
+	public String toString() {
+		final String result =
+				" code:" + code +
+				" title:" + title +
+				" contents:" + contents;
+		return result;
+	}
 }
