@@ -12,6 +12,7 @@
         http://mybatis.org/schema/mybatis-spring
         http://mybatis.org/schema/mybatis-spring.xsd">
 	<context:annotation-config />
+	<context:component-scan base-package="misskabu.dbproject.service"></context:component-scan>
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource"
 		p:driverClassName="com.mysql.jdbc.Driver"
@@ -30,5 +31,14 @@
 		<property name="configLocation"
 			value="/WEB-INF/configuration.xml" />
 	</bean>
-	<mybatis:scan base-package="misskabu.dbproject.dao" />
+	<bean id="dataMapper"
+		class="org.mybatis.spring.mapper.MapperFactoryBean">
+		<property name="mapperInterface"
+			value="misskabu.dbproject.mapper.DataMapper" />
+		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
+	</bean>
+	<bean id="sqlSession"
+		class="org.mybatis.spring.SqlSessionTemplate">
+		<constructor-arg index="0" ref="sqlSessionFactory" />
+	</bean>
 </beans>
