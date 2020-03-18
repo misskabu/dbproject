@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.misskabu.dbproject.mapper.DataMapper">
+    <resultMap id="TestResult" type="com.misskabu.dbproject.dao.DataDao">
+        <result column="code" property="code" />
+        <result column="title" property="title" />
+    </resultMap>
+    <select id="getData" resultMap="TestResult" parameterType="int">
+        SELECT
+        	code
+        	,title
+        	,contents
+        FROM
+        	data_table
+        WHERE
+        	code = #{id}
+        ;
+    </select>
+
+    <select id="findAll" resultMap="TestResult">
+    	SELECT
+    		id
+    		,code
+    		,title
+    		,contents
+    	FROM
+    		data_table
+    	ORDER BY code
+    	;
+    </select>
+</mapper>

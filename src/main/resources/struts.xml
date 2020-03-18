@@ -12,27 +12,27 @@
 		<default-action-ref name="index" />
 
 		<action name="index"
-			class="misskabu.dbproject.action.IndexAction">
+			class="com.misskabu.dbproject.action.IndexAction">
 			<result name="success">
-				/WEB-INF/index.jsp
+				/WEB-INF/jsp/index.jsp
 			</result>
 		</action>
 		<action name="indexAction_*" method="inputData"
-			class="misskabu.dbproject.action.IndexAction">
+			class="com.misskabu.dbproject.action.IndexAction">
 			<result name="success">
-				/WEB-INF/dbproject/inputData.jsp
+				/WEB-INF/jsp/inputData.jsp
 			</result>
 		</action>
 		<action name="inputAction_*" method="comfirmData"
-			class="misskabu.dbproject.action.InputAction">
+			class="com.misskabu.dbproject.action.InputAction">
 			<result name="success">
-				/WEB-INF/dbproject/comfirmData.jsp
+				/WEB-INF/jsp/comfirmData.jsp
 			</result>
 		</action>
 		<action name="comfirmAction_*" method="insertData"
-			class="misskabu.dbproject.action.ComfirmAction">
+			class="com.misskabu.dbproject.action.ComfirmAction">
 			<result name="success">
-				/WEB-INF/dbproject/complete.jsp
+				/WEB-INF/jsp/complete.jsp
 			</result>
 		</action>
 
