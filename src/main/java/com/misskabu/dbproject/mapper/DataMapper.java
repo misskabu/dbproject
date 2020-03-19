@@ -7,4 +7,5 @@ import com.misskabu.dbproject.dao.DataDao;
 public interface DataMapper {
 	DataDao getData(int id);
 	List<DataDao> findAll();
+	void addData(DataDao dataDao);
 }

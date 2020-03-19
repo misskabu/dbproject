@@ -29,4 +29,21 @@
     	ORDER BY code
     	;
     </select>
+
+    <!-- 新規データ登録 -->
+    <insert id="addData" parameterType="com.misskabu.dbproject.dao.DataDao">
+    	INSERT INTO
+    		data_table
+    	(
+    		 code
+    		,title
+    		,contents
+    	)
+    	VALUES
+    	(
+    		#{code}
+    		,#{title}
+    		,#{contents}
+    	)
+    </insert>
 </mapper>

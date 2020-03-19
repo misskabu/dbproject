@@ -6,6 +6,7 @@ package com.misskabu.dbproject.action;
 import org.springframework.stereotype.Controller;
 
 import com.misskabu.common.action.BaseAction;
+import com.misskabu.dbproject.dao.DataDao;
 import com.misskabu.dbproject.form.InputDataForm;
 import com.misskabu.dbproject.service.DataService;
 
@@ -29,9 +30,13 @@ public class ComfirmAction extends BaseAction{
 	public String insertData() {
 
 		log.info("insertData()_start");
-		//InputActionでセッションに保管したリクエストパラメータを取り出して引き継ぐ
-		log.info(inputDataForm.getTitle());
 
+		log.info(inputDataForm.getTitle());
+		DataDao dao = new DataDao();
+		dao.setCode(this.inputDataForm.getCode());
+		dao.setTitle(this.inputDataForm.getTitle());
+		dao.setContents(this.inputDataForm.getContents());
+		this.dataService.getDataDaoMapper().addData(dao);
 		log.info("insertData()_end");
 		return SUCCESS;
 	}
