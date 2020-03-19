@@ -25,7 +25,13 @@
 		</action>
 		<action name="inputAction_*" method="comfirmData"
 			class="com.misskabu.dbproject.action.InputAction">
-			<result name="success">
+			<result name="success" type="chain">
+				comfirmAction_comfirmData
+			</result>
+		</action>
+				<action name="comfirmAction_*" method="comfirmData"
+			class="com.misskabu.dbproject.action.InputAction">
+			<result name="success" type="chain">
 				/WEB-INF/jsp/comfirmData.jsp
 			</result>
 		</action>

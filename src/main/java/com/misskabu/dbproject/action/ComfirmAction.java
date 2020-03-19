@@ -29,12 +29,8 @@ public class ComfirmAction extends BaseAction{
 	public String insertData() {
 
 		log.info("insertData()_start");
-		//InputActionでセッションに保管したリクエストパラメータを取り出して引き継ぐ。
-		log.info(this.getDataService().getDataDaoMapper().getData(2));
-		this.inputDataForm = new InputDataForm();
-		this.inputDataForm.setCode(this.dataService.getDataDaoMapper().getData(2).getCode());
-		this.inputDataForm.setTitle(this.dataService.getDataDaoMapper().getData(2).getTitle());
-		this.inputDataForm.setContents(this.dataService.getDataDaoMapper().getData(2).getContents());
+		//InputActionでセッションに保管したリクエストパラメータを取り出して引き継ぐ
+		log.info(inputDataForm.getTitle());
 
 		log.info("insertData()_end");
 		return SUCCESS;
