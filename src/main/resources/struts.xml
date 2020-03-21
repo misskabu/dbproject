@@ -6,7 +6,7 @@
 	<constant name="struts.enable.DynamicMethodInvocation"
 		value="false" />
 	<constant name="struts.devMode" value="true" />
-
+	<constant name="struts.ui.theme" value="simple" />
 	<package name="default" namespace="/" extends="struts-default">
 
 		<default-action-ref name="index" />
@@ -17,12 +17,20 @@
 				/WEB-INF/jsp/index.jsp
 			</result>
 		</action>
-		<action name="indexAction_*" method="inputData"
+			<action name="indexAction_inputData" method="inputData"
 			class="com.misskabu.dbproject.action.IndexAction">
 			<result name="success">
 				/WEB-INF/jsp/inputData.jsp
 			</result>
 		</action>
+		<action name="indexAction_deleteData_*" method="deleteData"
+			class="com.misskabu.dbproject.action.IndexAction">
+			<param name="id">{1}</param>
+			<result name="success" type="redirectAction">
+				index
+			</result>
+		</action>
+
 		<action name="inputAction_*" method="comfirmData"
 			class="com.misskabu.dbproject.action.InputAction">
 			<result name="success" type="chain">

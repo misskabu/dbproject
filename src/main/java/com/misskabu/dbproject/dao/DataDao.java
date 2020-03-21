@@ -11,6 +11,7 @@ import java.io.Serializable;
  */
 public class DataDao implements Serializable{
 
+	private int id;
 	private int code;
 	private String title;
 	private String contents;
@@ -34,6 +35,12 @@ public class DataDao implements Serializable{
 		this.contents = contents;
 	}
 
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 	@Override
 	public String toString() {
 		final String result =

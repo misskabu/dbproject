@@ -15,10 +15,11 @@
 
 	<!-- Scan Component annotations and biding with Spring-->
 	<context:component-scan base-package="com.misskabu.dbproject.service"></context:component-scan>
+	<context:component-scan base-package="com.misskabu.dbproject.blogic"></context:component-scan>
 
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource"
-		p:driverClassName="com.mysql.jdbc.Driver"
+		p:driverClassName="com.mysql.cj.jdbc.Driver"
 		p:url="jdbc:mysql://localhost/ibasis_test" p:username="root"
 		p:password="" />
 	<bean class="org.springframework.jdbc.core.JdbcTemplate">

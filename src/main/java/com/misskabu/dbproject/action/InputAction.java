@@ -24,7 +24,7 @@ public class InputAction extends BaseAction {
 	public String comfirmData() {
 		log.info("comfirmData()_start");
 		log.info(inputDataForm);
-		this.userSession.put("inputDataForm", inputDataForm);
+		this.session.put("inputDataForm", inputDataForm);
 		log.info("comfirmData()_end");
 		return SUCCESS;
 	}

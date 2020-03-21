@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.misskabu.common.action.BaseAction;
+import com.misskabu.dbproject.blogic.DataBLogic;
 import com.misskabu.dbproject.dao.DataDao;
 import com.misskabu.dbproject.service.DataService;
 
@@ -19,6 +20,9 @@ public class IndexAction extends BaseAction {
 	 */
 	@Autowired
 	private DataService dataService;
+	@Autowired
+	private DataBLogic blogic;
+	private int id;
 	/**
 	 *  dataDao型のリスト
 	 */
@@ -26,8 +30,6 @@ public class IndexAction extends BaseAction {
 	public String execute() {
 		log.info("execute() start");
 		setDataDaoList(dataService.getDataDaoMapper().findAll());
-
-
 		log.info("execute() end");
 		return SUCCESS;
 	}
@@ -41,6 +43,18 @@ public class IndexAction extends BaseAction {
 		return SUCCESS;
 	}
 	/**
+	 * 削除ボタン押下時に削除確認画面に遷移させる
+	 * @return
+	 */
+	public String deleteData() {
+		log.info("deleteData()_start");
+		log.info(id);
+
+		blogic.getDataService().getDataDaoMapper().deleteDataById(id);
+		log.info("deleteData()_end");
+		return SUCCESS;
+	}
+	/**
 	 * @return dataDaoList
 	 */
 	public List<DataDao> getDataDaoList() {
@@ -51,5 +65,11 @@ public class IndexAction extends BaseAction {
 	 */
 	public void setDataDaoList(List<DataDao> dataDaoList) {
 		this.dataDaoList = dataDaoList;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
 	}
 }

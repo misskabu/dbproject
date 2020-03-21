@@ -3,26 +3,23 @@
  */
 package com.misskabu.dbproject.action;
 
-import org.springframework.stereotype.Controller;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import com.misskabu.common.action.BaseAction;
-import com.misskabu.dbproject.dao.DataDao;
+import com.misskabu.dbproject.blogic.DataBLogic;
 import com.misskabu.dbproject.form.InputDataForm;
-import com.misskabu.dbproject.service.DataService;
 
 /**
  * @author tabuchikenta
  * データの入力確認画面の制御を行うアクション
  */
-@Controller
+
 public class ComfirmAction extends BaseAction{
-//    @Autowired
-//    private DataDaoMapper daoMapper;
 
-
-	//この画面に遷移した時点ではNULL.
+	//InputActionからtype=chainを経由してリクエストを引き継いでいる。
 	private InputDataForm inputDataForm;
-	private DataService dataService;
+	@Autowired
+	private DataBLogic blogic;
 	/**
 	 * 登録ボタン押下時にDBへ登録し、成功したら完了画面に遷移させる
 	 * @return
@@ -30,13 +27,7 @@ public class ComfirmAction extends BaseAction{
 	public String insertData() {
 
 		log.info("insertData()_start");
-
-		log.info(inputDataForm.getTitle());
-		DataDao dao = new DataDao();
-		dao.setCode(this.inputDataForm.getCode());
-		dao.setTitle(this.inputDataForm.getTitle());
-		dao.setContents(this.inputDataForm.getContents());
-		this.dataService.getDataDaoMapper().addData(dao);
+		blogic.insertData(this.inputDataForm);
 		log.info("insertData()_end");
 		return SUCCESS;
 	}
@@ -47,10 +38,5 @@ public class ComfirmAction extends BaseAction{
 	public void setInputDataForm(InputDataForm inputDataForm) {
 		this.inputDataForm = inputDataForm;
 	}
-	public DataService getDataService() {
-		return dataService;
-	}
-	public void setDataService(DataService dataService) {
-		this.dataService = dataService;
-	}
+
 }

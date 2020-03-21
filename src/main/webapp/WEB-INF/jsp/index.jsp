@@ -16,24 +16,27 @@
 	<hr>
 
 	<table>
-
 			<thead>
 				<tr>
 					<th>コード番号</th>
 					<th>タイトル</th>
 					<th>内容</th>
+					<th>削除</th>
 				</tr>
 			</thead>
 			<tbody>
 			<s:iterator value="dataDaoList">
+			<s:form action="indexAction_deleteData_%{id}">
 				<tr>
 					<td><s:property value="code" /></td>
 					<td><s:property value="title" /></td>
 					<td><s:property value="contents" /></td>
+					<td><s:submit value="削除"/></td>
 				</tr>
+				</s:form>
 			</s:iterator>
-			</tbody>
 
+			</tbody>
 	</table>
 </body>
 </html>

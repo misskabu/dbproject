@@ -11,6 +11,7 @@ import java.io.Serializable;
  */
 public class InputDataForm implements Serializable{
 
+	private int id;
 	private int code;
 	private String title;
 	private String contents;
@@ -34,6 +35,18 @@ public class InputDataForm implements Serializable{
 		this.contents = contents;
 	}
 
+	/**
+	 * @return id
+	 */
+	public int getId() {
+		return id;
+	}
+	/**
+	 * @param id セットする id
+	 */
+	public void setId(int id) {
+		this.id = id;
+	}
 	@Override
 	public String toString() {
 		final String result =
